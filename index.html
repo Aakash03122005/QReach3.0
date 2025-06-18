@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QReach</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">QReach</div>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Import Database</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+                <div class="alerts">
+                    <img src="images/help_icon.png" alt="Help" class="help-icon" id="helpIcon">
+                </div>
+            </nav>
+            <div class="active-underline"></div>
+        </header>
+        <main>
+            <div class="overlay"></div>
+            <div id="home-page" class="page-content active">
+                <div class="center-content">
+                    <h1 class="main-title">
+                        <span class="char">Q</span><span class="char">R</span><span class="char">e</span><span class="char">a</span><span class="char">c</span><span class="char">h</span>
+                    </h1>
+                    <p class="tagline">Just Scan and Mark !</p>
+                </div>
+            </div>
+
+            <div id="import-database-page" class="page-content">
+                <div class="center-content">
+                    <h2 class="page-title">Import Database</h2>
+                    <p>Click the button below to import your Excel file.</p>
+                    <input type="file" id="excelFileInput" accept=".xls,.xlsx,.csv" style="display: none;">
+                    <button id="importExcelBtn" class="main-btn black">Import Excel File</button>
+                    <div id="excelTableDisplay" class="imported-table-container"></div>
+                </div>
+            </div>
+
+            <div id="dashboard-page" class="page-content">
+                <div class="center-content">
+                    <h2 class="page-title">Dashboard</h2>
+                    <div class="scrollable-chart-container">
+                        <canvas id="dashboardChart" width="600" height="400"></canvas>
+                        <div id="chartDetails" class="chart-details"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow left" id="leftArrow">&#8592;</button>
+            <button class="arrow right" id="rightArrow">&#8594;</button>
+        </main>
+        <footer>
+            <p>FOLLOW US ON @QREACH.COM</p>
+        </footer>
+        <div id="contactInfoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> santosh.aakash24@vit.edu</p>
+                <p><strong>Phone:</strong> +91 7028978748</p>
+
+                <p><strong>Email:</strong> neel.desai24@vit.edu</p>
+                <p><strong>Phone:</strong> +91 7410775891</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <!-- Chatbase Chatbot -->
+    <script>
+    (function(){
+      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+        window.chatbase=(...arguments)=>{
+          if(!window.chatbase.q){window.chatbase.q=[]}
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase=new Proxy(window.chatbase,{
+          get(target,prop){
+            if(prop==="q"){return target.q}
+            return(...args)=>target(prop,...args)
+          }
+        })
+      }
+      const onLoad=function(){
+        const script=document.createElement("script");
+        script.src="https://www.chatbase.co/embed.min.js";
+        script.id="dRK5o-NaFIYSAFv-wCRch";
+        script.domain="www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if(document.readyState==="complete"){onLoad()}
+      else{window.addEventListener("load",onLoad)}
+    })();
+    </script>
+</body>
+</html> 
